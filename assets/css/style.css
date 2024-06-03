@@ -1,0 +1,125 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: rgb(23, 1, 63);
+    align-items: center;
+    background-image: url(/assets/img/sonic.jpg);
+}
+
+.card-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 800px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px rgba(157, 226, 253, 0.3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+    background-color: #0610a5;
+    border-radius: 5px;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: 0.3s;
+}
+
+.card-front, 
+.card-back {
+    width: 90%;
+    border-radius: 5px;
+    position: absolute;
+    backface-visibility: hidden;
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    bottom: 0;
+    top: 0;
+}
+
+.card-front {
+    width: 90%;
+    height: 90%;
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.reset {
+    height: 640px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.sonic {
+    width: 70%;
+    height: 70%;
+}
+
+.reset.gameover {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
+
+header {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    background-color: rgb(37, 37, 179);
+    height: 100%;
+}
+
+main {
+height: 100%;
+background-color: antiquewhite;
+display: flexbox;
+flex-wrap: nowrap;
+}
+
+footer {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    background-color: rgb(37, 37, 179);
+    height: 100%;    
+}
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 10px;
+    color: aliceblue;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    .card {
+        height: calc(25% - 10px);
+        width: calc(33.333% - 10px);
+    }
+}
